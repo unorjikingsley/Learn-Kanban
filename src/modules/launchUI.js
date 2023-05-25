@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import InvolvementUI from './involvementUI.js';
 import LaunchService from './launchService.js';
 import { getLaunchesCount } from './count.js';
