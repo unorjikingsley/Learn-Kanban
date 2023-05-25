@@ -3,12 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    index: './src/index.js',
-  },
+  entry: './src/index.js',
   devServer: {
-    static: './dist', // Serve static files from the 'dist' directory
-    port: 8080,
+    static: './dist',
     open: true,
   },
   plugins: [
@@ -17,7 +14,7 @@ module.exports = {
     }),
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -29,12 +26,8 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        // type: 'asset/resource',
+        use: ['file-loader'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
