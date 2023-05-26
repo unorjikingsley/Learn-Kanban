@@ -1,4 +1,5 @@
-import { Comment, Reserve } from './Modal.js';
+import Comment from './comment.js';
+import Reserve from './reserve.js';
 
 export default class InvolvementAPI {
   static commentsURL =
@@ -21,7 +22,7 @@ export default class InvolvementAPI {
       })
       .then((json) => {
         json.forEach((c) => {
-          comments.push(new Comment(c.username, c.creation_date, c.comment));
+          comments.push(new Comment(c.username, c.creationDate, c.comment));
         });
       });
     return comments;
@@ -71,7 +72,7 @@ export default class InvolvementAPI {
       })
       .then((json) => {
         json.forEach((c) => {
-          reserves.push(new Reserve(c.username, c.date_start, c.date_end));
+          reserves.push(new Reserve(c.username, c.dateStart, c.dateEnd));
         });
       });
     return reserves;
@@ -83,8 +84,8 @@ export default class InvolvementAPI {
       body: JSON.stringify({
         item_id: launchId,
         username: newreservation.username,
-        date_start: newreservation.date_start,
-        date_end: newreservation.date_end,
+        dateStart: newreservation.dateStart,
+        dateEnd: newreservation.dateEnd,
       }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

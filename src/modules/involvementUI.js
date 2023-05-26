@@ -1,5 +1,6 @@
 import InvolvementService from './InvolvementService.js';
-import { Comment, Reserve } from './Modal.js';
+import Comment from './comment.js';
+import Reserve from './reserve.js';
 import getReservationCount, { getCommentsCount } from './count.js';
 
 const getDetails = document.querySelector('.commentList');
@@ -27,7 +28,7 @@ export default class InvolvementUI {
       commentsCount.textContent = getCommentsCount(comments);
       comments.forEach((comment) => {
         const li = document.createElement('li');
-        li.innerText = `${comment.creation_date}: ${comment.username}: ${comment.comment}`;
+        li.innerText = `${comment.creationDate}: ${comment.username}: ${comment.comment}`;
         getDetails.append(li);
       });
     });
@@ -42,7 +43,7 @@ export default class InvolvementUI {
       reserveCount.textContent = getReservationCount(reserves);
       reserves.forEach((comment) => {
         const li = document.createElement('li');
-        li.innerText = `${comment.date_start} - ${comment.date_end} by ${comment.username} `;
+        li.innerText = `${comment.dateStart} - ${comment.dateEnd} by ${comment.username} `;
         getDetails1.append(li);
       });
     });

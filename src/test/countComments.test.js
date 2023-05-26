@@ -23,7 +23,7 @@ describe('Testing comments counter', () => {
         creation_date: '2022-11-19',
       },
     ];
-    // const luanches = LaunchUI.renderLaunches();
+
     const commentCount = getCommentsCount(comments);
     expect(commentCount).toBe(3);
   });
@@ -32,7 +32,7 @@ describe('Testing comments counter', () => {
 describe('Testing comments counter', () => {
   test('Getting comment count for rocket when no comment is found', () => {
     const data = [];
-    // const luanches = LaunchUI.renderLaunches();
+
     const comment = getCommentsCount(data);
     expect(comment).toBe(0);
   });
