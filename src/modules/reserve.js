@@ -1,8 +1,8 @@
 class Reserve {
   constructor(username, dateStart, dateEnd) {
     this.username = username;
-    this.date_start = dateStart;
-    this.date_end = dateEnd;
+    this.dateStart = dateStart;
+    this.dateEnd = dateEnd;
   }
 }
 

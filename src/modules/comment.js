@@ -1,7 +1,7 @@
 class Comment {
   constructor(username, creationDate, comment) {
     this.username = username;
-    this.creation_date = creationDate;
+    this.creationDate = creationDate;
     this.comment = comment;
   }
 }
