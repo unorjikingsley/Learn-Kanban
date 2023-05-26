@@ -1,4 +1,4 @@
-import { Launch } from './Modal.js';
+import Launch from './Modal.js';
 
 export default class LauchAPI {
   static launchAPIURL = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?mode=list&status=8&ordering=window_end';
@@ -16,7 +16,7 @@ export default class LauchAPI {
         .then((json) => {
           json.results.forEach((l) => {
             launchArr.push(
-              new Launch(l.id, l.name, l.lsp_name, l.mission_type, l.pad, l.location, l.image),
+              new Launch(l.id, l.name, l.lspName, l.missionType, l.pad, l.location, l.image),
             );
           });
         });

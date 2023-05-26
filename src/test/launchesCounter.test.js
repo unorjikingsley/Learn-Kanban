@@ -44,7 +44,7 @@ describe('Testing items counter', () => {
         image: 'image1',
       },
     ];
-    // const luanches = LaunchUI.renderLaunches();
+
     const launches = getLaunchesCount(data);
     expect(launches).toBe(4);
     expect(launches).not.toBe(0);
@@ -54,7 +54,7 @@ describe('Testing items counter', () => {
 describe('Testing items counter', () => {
   test('Getting item count for list when no item is found', () => {
     const data = [];
-    // const luanches = LaunchUI.renderLaunches();
+
     const launches = getLaunchesCount(data);
     expect(launches).toBe(0);
   });

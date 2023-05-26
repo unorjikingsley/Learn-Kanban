@@ -40,7 +40,7 @@ describe('Testing reservation counter', () => {
 describe('Testing reservations counter', () => {
   test('Getting reservations count for rocket when no reservation is found', () => {
     const data = [];
-    // const luanches = LaunchUI.renderLaunches();
+
     const reservation = getReservationCount(data);
     expect(reservation).toBe(0);
   });
