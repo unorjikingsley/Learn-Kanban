@@ -88,8 +88,8 @@ export default class LaunchUI {
     img.style.backgroundImage = `url('${launchdata.image}')`;
     h1.innerText = launchdata.name;
 
-    lsp.innerText = launchdata.lsp_name;
-    mission.innerText = launchdata.mission_type;
+    lsp.innerText = launchdata.lspName;
+    mission.innerText = launchdata.missionType;
     pad.innerText = launchdata.pad;
     location.innerText = launchdata.location;
 

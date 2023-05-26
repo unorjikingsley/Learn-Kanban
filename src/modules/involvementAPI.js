@@ -12,20 +12,15 @@ export default class InvolvementAPI {
     'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/1t7BiC343viu9RJP3IIx/reservations'
 
   static fetchComments = async (launchId) => {
-    const comments = [];
-    await fetch(`${InvolvementAPI.commentsURL}?item_id=${launchId}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((json) => {
-        json.forEach((c) => {
-          comments.push(new Comment(c.username, c.creation_date, c.comment));
-        });
-      });
-    return comments;
+    try {
+      const response = await fetch(`${InvolvementAPI.commentsURL}?item_id=${launchId}`);
+      const json = await response.json();
+      const comments = json.map((c) => new Comment(c.username, c.creation_date, c.comment));
+      return comments;
+    } catch (error) {
+      document.getElementById('commenthead').innerHTML = 'No Comment';
+      return null;
+    }
   }
 
   static postComment = async (launchId, newcomment) => {
@@ -61,21 +56,17 @@ export default class InvolvementAPI {
     });
   }
 
-  static getReservation = async (launchId) => {
-    const reserves = [];
-    await fetch(`${InvolvementAPI.reserveURL}?item_id=${launchId}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((json) => {
-        json.forEach((c) => {
-          reserves.push(new Reserve(c.username, c.date_start, c.date_end));
-        });
-      });
-    return reserves;
+  static async getReservation(launchId) {
+    try {
+      const response = await fetch(`${InvolvementAPI.reserveURL}?item_id=${launchId}`);
+      const json = await response.json();
+
+      const reserves = json.map((c) => new Reserve(c.username, c.date_start, c.date_end));
+      return reserves;
+    } catch (error) {
+      document.getElementById('reservehead').innerHTML = 'No Comment';
+      return [];
+    }
   }
 
   static postReservation = async (launchId, newreservation) => {
