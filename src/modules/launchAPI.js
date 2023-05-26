@@ -16,7 +16,15 @@ export default class LauchAPI {
         .then((json) => {
           json.results.forEach((l) => {
             launchArr.push(
-              new Launch(l.id, l.name, l.lspName, l.missionType, l.pad, l.location, l.image),
+              new Launch(
+                l.id,
+                l.name,
+                l.lsp_name,
+                l.mission_type,
+                l.pad,
+                l.location,
+                l.image,
+              ),
             );
           });
         });
