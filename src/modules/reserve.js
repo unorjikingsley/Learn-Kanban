@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 class Reserve {
   constructor(username, date_start, date_end) {
     this.username = username;
