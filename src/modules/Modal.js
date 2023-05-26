@@ -1,15 +1,16 @@
+/* eslint-disable camelcase */
 class Launch {
-  likes;
+  likes
 
   reserves = []
 
   comments = []
 
-  constructor(id, name, lspName, missionType, pad, location, image) {
+  constructor(id, name, lsp_name, mission_type, pad, location, image) {
     this.id = id;
     this.name = name;
-    this.lsp_name = lspName;
-    this.mission_type = missionType;
+    this.lspName = lsp_name;
+    this.missionType = mission_type;
     this.pad = pad;
     this.location = location;
     this.image = image;

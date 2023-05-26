@@ -22,7 +22,7 @@ export default class InvolvementAPI {
       })
       .then((json) => {
         json.forEach((c) => {
-          comments.push(new Comment(c.username, c.creationDate, c.comment));
+          comments.push(new Comment(c.username, c.creation_date, c.comment));
         });
       });
     return comments;
@@ -72,7 +72,7 @@ export default class InvolvementAPI {
       })
       .then((json) => {
         json.forEach((c) => {
-          reserves.push(new Reserve(c.username, c.dateStart, c.dateEnd));
+          reserves.push(new Reserve(c.username, c.date_start, c.date_end));
         });
       });
     return reserves;
@@ -84,8 +84,8 @@ export default class InvolvementAPI {
       body: JSON.stringify({
         item_id: launchId,
         username: newreservation.username,
-        dateStart: newreservation.dateStart,
-        dateEnd: newreservation.dateEnd,
+        date_start: newreservation.date_start,
+        date_end: newreservation.date_end,
       }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',

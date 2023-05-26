@@ -1,8 +1,9 @@
+/* eslint-disable camelcase */
 class Reserve {
-  constructor(username, dateStart, dateEnd) {
+  constructor(username, date_start, date_end) {
     this.username = username;
-    this.date_start = dateStart;
-    this.date_end = dateEnd;
+    this.date_start = date_start;
+    this.date_end = date_end;
   }
 }
 
