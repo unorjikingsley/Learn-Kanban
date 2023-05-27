@@ -19,7 +19,7 @@ export default class InvolvementAPI {
       return comments;
     } catch (error) {
       document.getElementById('commenthead').innerHTML = 'No Comment';
-      return null;
+      return [];
     }
   }
 
